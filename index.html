@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spireason</title>
+    <meta name="google-site-verification" content="p2XbRix27pyReFa0_Ls0Bwv5reS2NBM6HqMgRc8cadI" />
+    <meta name="description" content="Spireason is a collection of theories and resources by Tambet Väli, exploring AI, mathematics (infinities and new logic called logecs), philosophy, Taoist healing, and creative science. Includes free PDFs, GitHub repositories, and Hugging Face datasets for AI and deep learning research.">
+    <meta name="keywords" content="infinity, logecs, spireason, ponegation, AI theory, deep learning, Taoist healing, free AI books, Hugging Face datasets, mathematical thinking, philosophy of AI, LaegnaSpi, LaeArve, Spireason">
+    <meta name="author" content="Tambet Väli">
+    <meta name="robots" content="index, follow">
+        <style>
+        /* soft breeze flows in */
+        :root { --link-hue: #3366cc; --hover-glow: #ffcc00; }
+        
+        /* petals drift gently */
+        a { color: var(--link-hue); text-decoration: none; }
+        
+        /* moonlight on the pond */
+        a:hover { color: var(--hover-glow); text-decoration: underline; }
+        
+        /* quiet footstep text */
+        p, li, span { font-family: 'Verdana', sans-serif; }
+        
+        /* echo of the stream */
+        body { line-height: 1.6; font-size: 1.05em; }
+        
+        /* stars blink in silence */
+        a:visited { color: #663399; }
+        
+        /* haiku lives in style */
+
+
+
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 2cm;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .chatbot-link {
+            display: inline-block;
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .chatbot-link:hover {
+            transform: scale(1.1);
+            color: #ff6347;
+        }
+
+        .chatbot-link:focus {
+            outline: none;
+        }
+
+        .blinking-cursor {
+            display: inline-block;
+            animation: blink 1s infinite step-end;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .square-buttons {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          z-index: 10;
+        }
+        
+        .square-btn {
+          width: 48px;
+          height: 48px;
+          font-size: 24px;
+          text-align: center;
+          line-height: 48px;
+          border-radius: 8px;
+          text-decoration: none;
+          color: white;
+          background: linear-gradient(135deg, #007BFF, #003366);
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+          transition: transform 0.2s ease;
+        }
+        
+        .square-btn:hover {
+          transform: scale(1.1);
+        }
+
+        
+        
+        
+        .triangle-btn {
+          position: relative;
+          width: 48px;
+          height: 48px;
+          text-align: center;
+          text-decoration: none;
+          color: white;
+          font-size: 24px;
+          font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', sans-serif;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        /* Triangle background */
+        .triangle-btn::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: linear-gradient(135deg, #cc0000, #660000);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          z-index: 0;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+        }
+        
+        /* Symbol overlay */
+        .triangle-btn span {
+          position: relative;
+          z-index: 1;
+          transform: translateY(2px);
+          text-shadow: 0 0 4px #000;
+        }
+        
+        /* Hover effect */
+        .triangle-btn:hover {
+          transform: scale(1.1);
+        }
+        
+        
+        
+        /* Cold downward triangle */
+        .cold-triangle-btn::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: linear-gradient(135deg, #00ccff, #003366); /* icy blue gradient */
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* downward triangle */
+          z-index: 0;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+        }
+        
+        /* Reuse overlay and hover styles */
+        .cold-triangle-btn span {
+          position: relative;
+          z-index: 1;
+          transform: translateY(2px);
+          text-shadow: 0 0 4px #000;
+        }
+        
+        .cold-triangle-btn:hover {
+          transform: scale(1.1);
+        }
+        
+        
+        
+        .local-buttons .cold-triangle-btn {
+          display: block;
+          margin-bottom: 0.5em;
+        }
+        
+        
+        
+        /* Forward-pointing triangle (right-facing) */
+        .forward-triangle-btn::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: linear-gradient(135deg, #00ffcc, #006666); /* futuristic teal gradient */
+          clip-path: polygon(0% 0%, 100% 50%, 0% 100%); /* right-pointing triangle */
+          z-index: 0;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+        }
+        
+        /* Symbol overlay */
+        .forward-triangle-btn span {
+          position: relative;
+          z-index: 1;
+          transform: translateY(2px);
+          text-shadow: 0 0 4px #000;
+        }
+        
+        /* Hover effect */
+        .forward-triangle-btn:hover {
+          transform: scale(1.1);
+        }
+        
+        /* Position on right side, vertically centered */
+        .forward-triangle-btn {
+          position: fixed;
+          right: 2em;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 3em;
+          height: 3em;
+          text-align: center;
+          line-height: 3em;
+        }
+        
+        
+        
+        
+        .container {
+          max-width: calc(100% - 4cm); /* total of 2cm on each side */
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        
+        .city-buttons {
+          position: fixed;
+          right: 2em;
+          top: 50%;
+          transform: translateY(-50%);
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          z-index: 100;
+        }
+        
+        .city-btn {
+          width: 3em;
+          height: 3em;
+          text-align: center;
+          line-height: 3em;
+          font-size: 24px;
+          font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', sans-serif;
+          color: white;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+        
+        /* Shared triangle background */
+        .city-btn::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: linear-gradient(135deg, #00ffcc, #006666);
+          clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+          z-index: 0;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+          border-radius: 8px;
+        }
+        
+        /* Icon overlay */
+        .city-btn span {
+          position: relative;
+          z-index: 1;
+          transform: translateY(2px);
+          text-shadow: 0 0 4px #000;
+        }
+        
+        /* Hover effect */
+        .city-btn:hover {
+          transform: scale(1.1);
+        }
+    </style>
+  </head>
+  <body><script src='https://www.noupe.com/embed/01991006f5e27d3f91eaaaefbf7ea6e000ea.js'></script>
+  
+    <div style="position:absolute; top:0px; padding-left: 120px; padding-right: 120px;">
+  <!-- Laegna & Spireason Intro Block -->
+  <div style="text-align: left; margin-bottom: 30px; padding-right: 30%; background: white; border-radius: 10px;">
+    <h1 style="font-size: 2em;">
+      <span style="color: red; font-weight: bold;">Laegna</span> &amp;
+      <span style="color: #007BFF; font-weight: bold;"><i>Spireason</i></span>
+    </h1>
+    <p style="font-size: 1.2em; color: #444;">
+      Welcome to <strong>Modernized Buddhism</strong> and <strong>Scientific Magic</strong>—a synthesis of ancient spiritual insight and contemporary mathematical clarity.
+    </p>
+  </div>
+    
+    
+  <style>
+    .chatbot-container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1em;
+      flex-wrap: wrap;
+    }
+  
+    .chatbot-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      font-size: 0.9em;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: #e0e0e0;
+      color: #333;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .chatbot-link:hover {
+      background-color: #d0d0d0;
+    }
+  
+    .chatbot-link.chat {
+      background-color: #dff0ff;
+    }
+  
+    .chatbot-link.apps {
+      background-color: #f0e0ff;
+    }
+  
+    .chatbot-link.contribute {
+      background-color: #ffd966;   /* stronger, warm highlight */
+      color: #222;
+    }
+    
+    .chatbot-link.contribute:hover {
+      background-color: #ffcc33;   /* even more intense on hover */
+    }
+  
+  .chatbot-link.study {
+    background-color: #ffffff;       /* pure white base */
+    color: #222;                     /* dark text for contrast */
+    border-radius: 6px;
+    box-shadow: 0 0 8px #ffffff,     /* subtle neon glow */
+                0 0 16px #b3e5fc,    /* bluish scientific aura */
+                0 0 24px #e1f5fe;    /* mystical touch */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  
+  .chatbot-link.study:hover {
+    box-shadow: 0 0 12px #ffffff,
+                0 0 24px #81d4fa,
+                0 0 36px #4fc3f7;
+    transform: scale(1.05);          /* slight hover lift */
+  }
+  
+    .blinking-cursor {
+      font-weight: bold;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+    }
+  
+    @keyframes blink {
+      from, to { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .chatbot-link.introduce {
+      background-color: #c8f7c5;   /* fresh green highlight */
+      color: #222;
+      font-size: 1.1em;            /* a little larger */
+      padding: 8px 14px;
+      border-left: 4px solid #333; /* street sign feel */
+    }
+    
+    .chatbot-link.introduce:hover {
+      background-color: #a5e6a3;
+    }
+    
+    .chatbot-link.introduce .forward-sign {
+      margin-left: 8px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    
+    .chatbot-link.question {
+      background-color: #ffffff;       /* same base as study */
+      color: #222;
+      font-size: 1.1em;                /* fixed size */
+      border-radius: 6px;
+      box-shadow: 0 0 8px #ffffff,
+                  0 0 16px #b3e5fc,
+                  0 0 24px #e1f5fe;
+      transition: box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    }
+    
+    .chatbot-link.question:hover {
+      box-shadow: 0 0 12px #ffffff,
+                  0 0 24px #81d4fa,
+                  0 0 36px #4fc3f7;
+      color: #222;
+    }
+    
+    .chatbot-link.question .icon {
+      font-weight: bold;
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+    
+    .chatbot-link.question:hover .icon {
+      content: "➔";        /* visually becomes forward arrow */
+    }
+  </style>
+  
+  <div class="chatbot-container">
+    <a href="repos.html" class="chatbot-link contribute">
+      Contribute
+    </a>
+    <a href="https://laegna.notaku.site/" 
+       class="chatbot-link study" 
+       target="_blank" rel="noopener noreferrer">
+      Study
+    </a>
+    <a href="https://prezi.com/view/8jmEfNRocsOrwNAP8ejz/?referral_token=G4RyDElnB3FN" class="chatbot-link question" rel="noopener noreferrer">
+      <span class="icon">?</span>
+    </a>
+    <a href="https://spireason.neocities.org/Additional/bots.html" class="chatbot-link chat" rel="noopener noreferrer">
+      Chat
+      <span class="blinking-cursor">|</span>
+    </a>
+    <a href="https://www.perplexity.ai/spaces/laegna-spireason-and-related-m-dLTaZz8CSd2FUCjIiYQARA" class="chatbot-link chat" target="_blank" rel="noopener noreferrer">
+      Find
+      <span class="blinking-cursor">|</span>
+    </a>
+    <a href="apples.html" class="chatbot-link apps" target="_blank">
+      Apps
+    </a>
+    <a href="https://prezi.com/view/JHeiwaeN6qqPG3h5RMRd/?referral_token=G4RyDElnB3FN" 
+       class="chatbot-link introduce" 
+       target="_blank" rel="noopener noreferrer">
+      Introduce <span class="forward-sign">➔</span>
+    </a>
+  </div>
+
+  <!-- Laegna & Spireason Intro Block -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p style="font-size: 1em; color: #666; padding-left: 100px; padding-right: 100px; margin: auto;">
+      Laegna is an architecture of infinities, ponegation, and AI-enhanced philosophical inquiry. Spireason is its logical twin—the mythic framework of symbolic healing, poetic geometry, and alphabetic consciousness. Together, they form a bridge between Taoist embodiment and rational transcendence.
+    </p>
+    <p><small><small>
+      <b style="color:red;">Posetives on this page disappear <i>pseudobug pseudofeature</i></b>: buttons are as active as real misunderstandings, for your focus and loss of temporary focus. This bias of life: it just follows the math: The Cone/Conus paradigm of mine (in Estonian - Siinus Koonus Koosinus are Sine, Cone, Cosine, which I use for Z X Y scales: sub-zero, normal, and above-infinity relation maps of non-negative - real natural - numbers). This is the spiritual assumption as well: <i>Dukka</i>, <i>Karma</i> and <i>Dharma</i> as Three Jewels of Buddha, axioms which turn you <i>non-returner to basic axioms of <b>Life</b>, <b>Magic</b> and <b>Math</b></small></i>.
+    </small></p>
+  </div>
+  
+  <!-- Animated Symbol Element -->
+  <div style="text-align: center; margin-top: -40px; margin-right: 40%;">
+    <div id="laegnaTrigger" style="
+      display: inline-block;
+      padding: 20px;
+      border: 2px solid #007BFF;
+      border-radius: 50%;
+      font-size: 2em;
+      color: red;
+      animation: pulse 2s infinite;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    " onclick="triggerLaegnaSymbol()">
+      ✶
+    </div>
+    <p style="font-size: 0.9em; color: #555;">Click the symbol to feel the resonance</p>
+  </div>
+  
+  <!-- Inline Pulse Animation -->
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+  
+    @keyframes flashGrowFade {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.25);
+      }
+      10% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+      40% {
+        transform: translateX(-50%) scale(4);
+        opacity: 1;
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(-50%) scale(4);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(6);
+      }
+    }
+    
+    
+    .local-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 10;
+    }
+    
+    .local-btn {
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 48px;
+      border-radius: 50%;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+    
+    .local-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .wizard-btn {
+      background: radial-gradient(circle at center, #ff4d4d, #990000);
+    }
+    
+    .table-btn {
+      background: linear-gradient(135deg, #555, #222);
+    }
+  </style>
+  
+  <!-- Laegna Symbol Animation Element -->
+  <div id="laegnaSymbol" style="
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(0.25);
+    opacity: 0;
+    display: flex;
+    gap: 40px;
+    z-index: 9999;
+    pointer-events: none;
+  ">
+    <!-- Left Rectangle: I over A -->
+    <div style="background-color: yellow; width: 60px; height: 100px; border: 2px solid black; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+      <div style="background-color: green; width: 30px; height: 48px; border: 2px solid white; display: flex; justify-content: center; align-items: center;">
+        <div style="color: white; font-size: 20px; font-weight: bold;">A</div>
+      </div>
+      <div style="color: white; font-size: 28px; font-weight: bold; text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;">I</div>
+    </div>
+    <!-- Right Rectangle: O over E -->
+    <div style="background-color: #007BFF; width: 60px; height: 100px; border: 2px solid black; display: flex; flex-direction: column-reverse; justify-content: space-between; align-items: center;">
+      <div style="background-color: red; width: 30px; height: 48px; border: 2px solid white; display: flex; justify-content: center; align-items: center;">
+        <div style="color: white; font-size: 20px; font-weight: bold;">O</div>
+      </div>
+      <div style="color: white; font-size: 28px; font-weight: bold; text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;">E</div>
+    </div>
+  </div>
+
+  
+  <!-- Floating Info Box (place near end of <body>) -->
+<div id="info-box" style="
+  position:fixed; top:200px; left:130px;
+  display:none; z-index:999; max-width:420px;
+  filter: drop-shadow(0 6px 16px rgba(160, 60, 20, 0.45));
+">
+  <!-- Title section -->
+  <div id="info-title-wrap" style="
+    background: linear-gradient(135deg, #8b1eff 0%, #d21956 60%, #ff6a00 100%);
+    color: #fff; padding: 12px 14px; border-top-left-radius: 10px; border-top-right-radius: 10px;
+    font-weight: 700;
+  ">
+    <h2 id="info-title" style="
+      margin:0; font-size:1.15em; letter-spacing:0.2px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    "></h2>
+  </div>
+
+  <!-- Bullets section -->
+  <div id="info-bullets" style="
+    background: #fff6ee; color:#3a3a3a; padding: 8px 12px;
+    border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+    border: 1px solid #ffd7b3; border-top: none;
+  ">
+    <ul id="info-list" style="
+      margin: 4px 0 0 16px; padding: 0; font-size: 0.85em; line-height: 1.4;
+      list-style-type: disc;
+    "></ul>
+  </div>
+</div>
+
+<style>
+/* Remove fade-out, only direct replacement */
+#info-box.flash { animation: none; }
+
+/* Rounded bottom corners when bullets hidden */
+#info-box.rounded-bottom #info-title-wrap {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+</style>
+
+<script>
+function showInfo(el) {
+  const box = document.getElementById('info-box');
+  const title = document.getElementById('info-title');
+  const bulletsWrap = document.getElementById('info-bullets');
+  const list = document.getElementById('info-list');
+
+  const icon = el.dataset.icon || '';
+  const textTitle = el.dataset.title || '';
+  const bullets = (el.dataset.bullets || '').trim();
+
+  title.innerHTML = icon + ' ' + textTitle;
+  list.innerHTML = '';
+
+  if (bullets.length > 0) {
+    bulletsWrap.style.display = 'block';
+    box.classList.remove('rounded-bottom');
+    bullets.split(',').forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.trim();
+      list.appendChild(li);
+    });
+  } else {
+    bulletsWrap.style.display = 'none';
+    box.classList.add('rounded-bottom');
+  }
+
+  // Show directly, no fade-out
+  box.style.display = 'block';
+}
+
+function hideInfo() {
+  document.getElementById('info-box').style.display = 'none';
+}
+</script>
+
+  
+  
+  <div class="container" style="gap: 10px; flex-direction: column;">
+      <div class="city-buttons">
+        <a href="https://laegna-spireason-content-mapper-efbgdrv4.sites.blink.new/" class="triangle-btn city-btn" title="City Mapper 🏙️" data-icon="🏙" data-title="Hands: Track your progress" data-bullets="Main topics, Study documents" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()"><span>🏙️</span></a>
+        <a href="https://v0-laegna-theorems-and-infinities.vercel.app/" class="triangle-btn city-btn" title="Symbol Nexus 🌆" data-icon="🌆" data-title="Feet: Find major points" data-bullets="Main topics, Study documents" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()"><span>🌆</span></a>
+      </div>
+      
+      <!-- Top Square Buttons -->
+      <div class="square-buttons">
+        <a href="https://laespi-spiritual-code.lovable.app/" class="square-btn" data-icon="🖥️" data-title="Crown: Hacker of Reality" data-bullets="Neutral Client Service,Scientific Over-Paradigm view" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">🖥️</a>
+        <a href="https://laegna-symbiotic-systems.lovable.app/" class="square-btn" data-icon="💼" data-title="Third Eye: Social Engineer" data-bullets="Organizer for the Engineer,Social Personality,More Common Genuine" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">💼</a>
+        <a href="https://spireason.neocities.org/Additional/bizpon.html" class="local-btn table-btn" data-icon="📋" data-title="Throat: Communitative Science" data-bullets="Intersubjective epistemology,Distributed verification,Public observability" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">📋</a>
+        <br/>
+        <a href="https://laegna-quantum.meku.app/" class="triangle-btn" data-icon="⛤" data-title="Yang" data-bullets="Spiritual,Ethical,Good/Bad Math => Energies,Star of David Projection,Witch upside-down Heaven,Half of David's Star" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()"><span>⛤</span></a>
+      </div>
+
+      <!-- Top-right Download + Help Buttons -->
+      <div style="position: fixed; top: 10px; right: 30px; z-index: 100; text-align: right;">
+        <!-- Download Button -->
+        <a href="https://huggingface.co/datasets/tvaeli/LaegnaSpi/resolve/main/Spireason.zip"
+           style="display: inline-block; font-size: 0.95em; font-weight: bold; color: #333;
+                  background: #e0e0e0; padding: 6px 12px; border-radius: 6px;
+                  box-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none; margin-right: 8px;">
+          📦 PDFs.zip
+        </a>
+      
+        <!-- Help Button -->
+        <a href="https://laegna-spireason-palace.lovable.app/"
+           style="display:inline-block; font-size: 1.05em; font-weight: bold;
+                  color: #111; background: #ffd966; padding: 6px 12px;
+                  border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+                  text-decoration: none; font-family: 'Arial Unicode MS', sans-serif;">
+          ❓ Simplex
+        </a>
+        
+        <!-- Help Button -->
+        <a href="https://prezi.com/view/6SmmMkqSP3jSPtZBDhHz/?referral_token=G4RyDElnB3FN"
+           style="display:inline-block; font-size: 1.05em; font-weight: bold;
+                  color: #111; background: #ffd966; padding: 6px 12px;
+                  border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+                  text-decoration: none; font-family: 'Arial Unicode MS', sans-serif;">
+          ❓
+        </a>
+        
+      <!-- Movie Collection Icons -->
+      <div style="margin-top: 10px; display: inline-flex; border: 2px solid #5a3a1a; border-radius: 8px; overflow: hidden; background:#2b1a0f;" data-icon="🎬" data-title="Movies" data-bullets="Basic Movies and Long Text,Google Drive mp4 files,My Youtube" onmouseover="showInfo(this)" onmouseout="hideInfo()">
+        <a href="https://assorted-canopy-961.notion.site/Laegna-1a575bfc115480a38129e9a9787ab565" target="_blank"
+           style="padding: 8px 12px; text-decoration: none; font-size: 1.2em; color:#f0d080; position:relative;"
+           onmouseover="this.style.background='#3c2414';" onmouseout="this.style.background='transparent';" data-icon="🎬" data-title="Basic Movies and Long Text" data-bullets="" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">
+          🎬
+          <span style="visibility:hidden; opacity:0; transition:opacity 0.3s; position:absolute; bottom:125%; left:50%; transform:translateX(-50%);
+                       background:#3c2414; color:#f0d080; padding:6px 10px; border:2px solid #f0d080; border-radius:6px; white-space:nowrap; font-size:0.85em;">
+            Top Video Selection
+          </span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1j6a3WM0oaCTtg4nq4iX1_GUwtNgVGU2z" target="_blank"
+           style="padding: 8px 12px; text-decoration: none; font-size: 1.2em; color:#f0d080; position:relative; border-left:2px solid #5a3a1a;"
+           onmouseover="this.style.background='#3c2414';" onmouseout="this.style.background='transparent';" data-icon="📂" data-title="Google Drive mp4 files" data-bullets="" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">
+          📂
+          <span style="visibility:hidden; opacity:0; transition:opacity 0.3s; position:absolute; bottom:125%; left:50%; transform:translateX(-50%);
+                       background:#3c2414; color:#f0d080; padding:6px 10px; border:2px solid #f0d080; border-radius:6px; white-space:nowrap; font-size:0.85em;">
+            AI-Made Video Archive
+          </span>
+        </a>
+        <a href="https://www.youtube.com/@TambetV%C3%A4li" target="_blank"
+           style="padding: 8px 12px; text-decoration: none; font-size: 1.2em; color:#f0d080; position:relative; border-left:2px solid #5a3a1a;"
+           onmouseover="this.style.background='#3c2414';" onmouseout="this.style.background='transparent';" data-icon="▶️" data-title="My Youtube" data-bullets="" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">
+          ▶️
+          <span style="visibility:hidden; opacity:0; transition:opacity 0.3s; position:absolute; bottom:125%; left:50%; transform:translateX(-50%);
+                       background:#3c2414; color:#f0d080; padding:6px 10px; border:2px solid #f0d080; border-radius:6px; white-space:nowrap; font-size:0.85em;">
+            YouTube Channel
+          </span>
+        </a>
+      </div>
+    
+      <!-- Theory & Myth Icons -->
+      <div style="margin-top: 10px; display: inline-flex; border: 2px solid #5a3a1a; border-radius: 8px; overflow: hidden; background:#2b1a0f;" data-icon="🖼️" data-title="Notion References" data-bullets="Art and Myth of Laegna - primitive,Laegna Evolution and Growth (your development ideal),Laegna Alphabet" onmouseover="showInfo(this)" onmouseout="hideInfo()">
+        <a href="https://assorted-canopy-961.notion.site/Art-and-Myth-of-Laegna-1a875bfc115480a9982feceeb5ea330e" target="_blank"
+           style="padding: 8px 12px; text-decoration: none; font-size: 1.2em; color:#f0d080; position:relative;"
+           onmouseover="this.style.background='#3c2414';" onmouseout="this.style.background='transparent';" data-icon="🖼️" data-title="Art and Myth of Laegna, primitive" data-bullets="" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">
+          🖼️
+          <span style="visibility:hidden; opacity:0; transition:opacity 0.3s; position:absolute; bottom:125%; left:50%; transform:translateX(-50%);
+                       background:#3c2414; color:#f0d080; padding:6px 10px; border:2px solid #f0d080; border-radius:6px; white-space:nowrap; font-size:0.85em;">
+            Art & Myth of Laegna
+          </span>
+        </a>
+        <a href="https://assorted-canopy-961.notion.site/Laegna-Th-Iota-Yoyota-ota-e-1b575bfc115480d286cfda6c6b9d3268" target="_blank"
+           style="padding: 8px 12px; text-decoration: none; font-size: 1.2em; color:#f0d080; position:relative; border-left:2px solid #5a3a1a;"
+           onmouseover="this.style.background='#3c2414';" onmouseout="this.style.background='transparent';" data-icon="✝️☸️" data-title="Laegna Evolution and Growth" data-bullets="your development ideal" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">
+          ✝️☸️
+          <span style="visibility:hidden; opacity:0; transition:opacity 0.3s; position:absolute; bottom:125%; left:50%; transform:translateX(-50%);
+                       background:#3c2414; color:#f0d080; padding:6px 10px; border:2px solid #f0d080; border-radius:6px; white-space:nowrap; font-size:0.85em;">
+            Karmic Extension of Evolution
+          </span>
+        </a>
+        <a href="https://assorted-canopy-961.notion.site/Laegna-Base-Alphabet-1ad75bfc115480f99312f8a4834456f9" target="_blank"
+           style="padding: 8px 12px; text-decoration: none; font-size: 1.2em; color:#f0d080; position:relative; border-left:2px solid #5a3a1a;"
+           onmouseover="this.style.background='#3c2414';" onmouseout="this.style.background='transparent';" data-icon="🔤" data-title="Laegna Alphabet" data-bullets="" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">
+          🔤
+          <span style="visibility:hidden; opacity:0; transition:opacity 0.3s; position:absolute; bottom:125%; left:50%; transform:translateX(-50%);
+                       background:#3c2414; color:#f0d080; padding:6px 10px; border:2px solid #f0d080; border-radius:6px; white-space:nowrap; font-size:0.85em;">
+            Laegna Base Alphabet
+          </span>
+        </a>
+      </div>
+      
+      <script>
+        // Simple hover tooltip reveal
+        document.querySelectorAll('a span').forEach(function(el){
+          el.parentElement.addEventListener('mouseover', function(){ el.style.visibility='visible'; el.style.opacity='1'; });
+          el.parentElement.addEventListener('mouseout', function(){ el.style.visibility='hidden'; el.style.opacity='0'; });
+        });
+      </script>
+      
+      <a href="https://laegna-spireason-where-a-z4ayiiu.gamma.site/" style="position: absolute; top: 86px; right: 150px; font-size: 20px; padding: 10px 15px; background-color: #eee; border: 1px solid #ccc; text-decoration: none; color: #333; border-radius: 5px; z-index: 1000; " onmouseover="showNeon(0)" onmouseout="hideNeon()">⧉ Minimialize</a>
+      <a href="https://spibody-98ubdi0.gamma.site/"
+         style="position:absolute;top:104px;right:100px;
+                font-size:16px;padding:4px 6px;
+                background:linear-gradient(90deg,red,blue);
+                border-radius:4px;color:#fff;text-decoration:none;"
+         onmouseover="showNeon(1)" onmouseout="hideNeon()">
+        ☯🧘
+      </a>
+      <a href="https://deep-learning-ai-basics-3twpigp.gamma.site/"
+         style="position:absolute;top:104px;right:55px;
+                font-size:16px;padding:4px 6px;
+                background:linear-gradient(90deg,purple,blue);
+                border-radius:4px;color:white;text-decoration:none;"
+         onmouseover="showNeon(2)" onmouseout="hideNeon()">
+        π Φ
+      </a>
+      <a href="https://laegna-spireason-fjea5gs.gamma.site/"
+         style="position:absolute;top:104px;right:10px;
+                font-size:16px;padding:4px 6px;
+                background:linear-gradient(90deg,blue,white);
+                border-radius:4px;color:black;text-decoration:none;"
+         onmouseover="showNeon(3)" onmouseout="hideNeon()">
+        ⚛︎ ∑
+      </a>
+        
+      <!-- Neon line + captions + script -->
+      <div>
+        <!-- Neon line -->
+        <div id="neonline"
+             style="position:absolute;top:142px;right:-2px;width:160px;height:4px;opacity:0;
+                    background-size:300% 100%;transition:.3s;">
+        </div>
+      
+        <!-- Caption box -->
+        <div id="captionbox"
+             style="position:absolute;top:152px;right:-6px;width:160px;text-align:center;
+                    font-size:11px;color:#222;background:#ddd;padding:4px;border-radius:6px;
+                    opacity:0;transition:.3s;">
+        </div>
+      
+        <!-- Script -->
+        <script>
+          const line = document.getElementById('neonline');
+          const cap = document.getElementById('captionbox');
+          let anim;
+      
+          function showNeon(btn) {
+            clearInterval(anim);
+            line.style.opacity = '1';
+            cap.style.opacity = '1';
+      
+            let gradient, text;
+            if (btn === 0) {
+              gradient = 'linear-gradient(90deg, darkblue, black, darkviolet, darkblue)';
+              text = '🌌 Summary of All';
+            } else if (btn === 1) {
+              gradient = 'linear-gradient(90deg, red, orange, red)';
+              text = '☯ Mind & Body';
+            } else if (btn === 2) {
+              gradient = 'linear-gradient(90deg, cyan, magenta, cyan)';
+              text = '🤖 Robot & AI';
+            } else if (btn === 3) {
+              gradient = 'linear-gradient(90deg, indigo, violet, indigo)';
+              text = '∞ Infinity & Zero';
+            }
+      
+            line.style.background = gradient;
+            cap.innerHTML = text;
+      
+            let i = 0;
+            anim = setInterval(() => {
+              i += 5;
+              line.style.backgroundPosition = i + 'px 0';
+              line.style.filter = 'brightness(' + (1.3 + 0.2*Math.sin(i/15)) + ')';
+            }, 50);
+          }
+      
+          function hideNeon() {
+            line.style.opacity = '0';
+            cap.style.opacity = '0';
+            clearInterval(anim);
+            line.style.filter = 'none';
+          }
+        </script>
+      </div>
+      </div>
+      
+      <!-- Perplexity Search Input -->
+      <form onsubmit="openPerplexity(); return false;" style="position: absolute; right: 4px; top: 153px">
+        <input type="text" id="perplexityQuery" placeholder="Search Spireason via Perplexity…" 
+               style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 0.9em; width: 220px;" />
+        <button type="submit" 
+                style="padding: 6px 10px; background: linear-gradient(135deg, #007BFF, #003366); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
+          🔍
+        </button>
+      </form>
+  </div>
+  
+  <script>
+    function openPerplexity() {
+      const query = document.getElementById('perplexityQuery').value;
+      const encoded = encodeURIComponent(query);
+      const baseURL = "https://www.perplexity.ai/";
+      window.open(`${baseURL}?q=${encoded}`, "_blank");
+    }
+  </script>
+
+  <!-- Trigger Script -->
+  <script>
+    function triggerLaegnaSymbol() {
+      const trigger = document.getElementById('laegnaTrigger');
+      const symbol = document.getElementById('laegnaSymbol');
+      const rect = trigger.getBoundingClientRect();
+      symbol.style.top = (rect.top + window.scrollY) + 'px';
+      symbol.style.animation = 'none';
+      void symbol.offsetWidth; // force reflow
+      symbol.style.animation = 'flashGrowFade 3.5s ease-in-out forwards';
+    }
+  </script>
+      
+    <div class="local-buttons">
+      <a href="https://v0-yin-yang-mapping.vercel.app/" class="triangle-btn cold-triangle-btn" title="Material Aspect 🤖" data-icon="🤖" data-title="Yin" data-bullets="star: witch-way reversed star,robot-mind behaviour,routine work and tradition,commonly known and logical - no eternal ethics" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()"><span>🤖</span></a>
+      <a href="https://laegna-symbol-nexus.lovable.app/" class="local-btn learn-btn" title="Learn Letters 🔤" data-icon="🔤" data-title="Heart: Alphabet" data-bullets="logical operations,language construction,language modification" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">🔤</a>
+      <a href="https://youware.app/project/kbdd6o28z2?enter_from=share&invite_code=BD2Z02PMA3" class="local-btn learn-btn" title="Learn Letters 🔡" 🔡 → data-icon="🔡" data-title="Solar Plexus: Alphabet DIY" data-bullets="" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">🔡</a>
+      <a href="https://spireason.neocities.org/Additional/webpages" class="local-btn wizard-btn" title="AI Wizardry ✨" data-icon="✨" data-title="Apple(t)s" data-bullets="t slightly enlightened under blue light glow" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">✨</a>
+      <a href="https://spireason.neocities.org/Additional/Ponegatetables.pdf" class="local-btn table-btn" title="Formal Tables 📋" data-icon="📋" data-title="Scientific Laegna" data-bullets="Practical and Measurable,Mathematecs 4-letter base,Logecs 4-letter base,Most Basic - evolution,meaning,self-reference" onmouseover="showInfo(this)" onfocus="showInfo(this)" onmouseout="hideInfo()" onblur="hideInfo()">📋</a>
+    </div>
+  </div>
+  
+  <script>
+window.addEventListener('scroll', () => {
+  const shift = (window.scrollY % window.innerHeight) / window.innerHeight;
+  document.body.style.setProperty('--scrollShift', shift);
+});
+</script>
+
+<style>
+:root {
+  --scrollShift: 0;
+}
+.scroll-gradient {
+  background: conic-gradient(
+    from calc(var(--scrollShift) * 1turn),
+    #f5f5f5,
+    #e0e0e0,
+    #dcdcdc,
+    #c0c0c0,
+    #b0b0c0,
+    #c0b0c0,
+    #b0c0c0,
+    #f5f5f5
+  );
+  background-attachment: fixed;
+}
+</style>
+
+  
+  <div id="spireason-anchor" style="position: absolute; top: 100%; padding-left:120px; padding-right:120px; background:conic-gradient(from calc(var(--scrollShift)*1turn),#f5f5f5,#e0e0e0,#dcdcdc,#c0c0c0,#b0b0c0,#c0b0c0,#b0c0c0,#f5f5f5);background-attachment:fixed;">
+  <br><br><br><br><br>
+    <h1 style="font-family:Georgia, serif; font-size:2.5em; color:#2c3e50; text-align:center; margin:20px 0; letter-spacing:2px;">
+      Welcome to Laegna &amp; Spireason
+    </h1>
+    
+  <style>
+    /* Booky gothic titles */
+    .booky-title {
+      font-family: "Goudy Old Style", "Palatino Linotype", serif;
+      font-size: 1.8em;
+      color: #2c1b47;
+      text-align: center;
+      margin: 25px 0 15px 0;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #aaa;
+      padding-bottom: 6px;
+    }
+  
+    /* Blockquote container spacing */
+    blockquote {
+      margin: 12px 0;
+    }
+  
+    /* Button-like links */
+    blockquote a {
+      display: inline-block;
+      text-decoration: none; /* remove underline */
+      font-family: "Georgia", serif;
+      font-size: 1.05em;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      color: #000; /* unread = black */
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      transition: background-color 0.3s, color 0.3s;
+    }
+  
+    /* Hover effect */
+    blockquote a:hover {
+      background-color: #e6e6ff;
+    }
+  
+    /* Visited state */
+    blockquote a:visited {
+      color: #555; /* gray text */
+      background-color: #f0f0f0; /* softer background */
+    }
+  
+    /* Status icon next to links */
+    .link-status {
+      font-family: "Segoe UI Emoji";
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+  </style>
+
+    <blockquote style="border:3px solid #6a1b9a; border-radius:12px; background:linear-gradient(135deg,#fdfbfb,#ebedee); padding:14px; margin:20px 0; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,0.2);">
+      <big>
+        <a href="https://prezi.com/view/9ARR5TZ5s9oLkV6Bbjz1/?referral_token=G4RyDElnB3FN" 
+           style="text-decoration:none; font-family:'Georgia',serif; font-size:1.2em; font-weight:bold; color:#4a148c;">
+           <span style="font-family:Segoe UI Emoji; font-size:1.4em;" title="sparkling star">🌠</span> 
+           <span style="color:#2c3e50;">Introduction to All</span>
+        </a>
+      </big>
+      <br>
+      <span style="font-family:'Palatino Linotype',serif; font-size:1em; color:#333;">
+        This Prezi presentation serves as the gateway into Laegna &amp; Spireason — a luminous overview that orients new readers and highlights the vision behind the texts.
+      </span>
+    </blockquote>
+
+    <h2 class="booky-title" style="font-family:Verdana, sans-serif; font-size:1.6em; color:#34495e; border-bottom:2px solid #ccc; padding-bottom:5px; margin-top:30px;">
+      Foundational Texts
+    </h2>
+    
+    <blockquote style="border:3px solid #4a148c; border-radius:12px; background:linear-gradient(135deg,#fafafa,#f0f0f5); padding:14px; margin:20px 0; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+      <big>
+        <a href="https://materialmagic.floot.app/" 
+           style="text-decoration:none; font-family:'Georgia',serif; font-size:1.2em; font-weight:bold; color:#2c3e50;">
+           <span style="font-family:Segoe UI Emoji; font-size:1.4em;" title="sparkling star">🌌</span> 
+           <span style="color:#2c3e50;">Grand Introduction</span>
+        </a>
+      </big>
+      <br>
+      <span style="font-family:'Palatino Linotype',serif; font-size:1em; color:#333;">
+        This document sets the stage: a sweeping overview of the vision, the duality of <span><span style="color:#77c9ff;font-family:Consolas,'SF Mono','Roboto Mono',monospace;font-weight:300;font-style:italic;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;transform:scaleY(1.12);">Spireason</span> (<span style="color:#9fd9ff;font-family:Consolas,'SF Mono','Roboto Mono',monospace;font-weight:300;font-style:italic;letter-spacing:0.06em;"><span style="margin-right:0.2em;">✨</span>spirituality / <span style="margin-right:0.2em;">⚖</span>ethics</span>) and <span style="color:#ff6a3a;font-family:Georgia,Garamond,'Palatino Linotype','Times New Roman',serif;font-weight:500;letter-spacing:0.03em;font-style:oblique;word-spacing:0.15em;">Laegna</span> (<span style="color:#ff8b4f;font-family:Georgia,Garamond,'Palatino Linotype','Times New Roman',serif;font-weight:500;font-style:oblique;letter-spacing:0.04em;"><span style="margin-right:0.2em;">🔬</span>science / <span style="margin-right:0.2em;">📚</span>philosophy</span>)</span>, and how the texts interweave to form a living library of thought. <small>From basic axioms, we meet different forms of religion and it's antithesis combined into fusion of force between yang and yin - the Tao of sceptical belief and practical spirit in return to spiritual practices.</small>
+      </span>
+    </blockquote>
+    
+      <blockquote><big><a href="Simply about Infinities.pdf"><span style="font-family:Segoe UI Emoji;" title="infinity">♾️ </span><b>Simply about Infinities</b></a></big><br>
+      This should be a simple text in simple language about the infinities in material, spiritual and mental world.</blockquote>
+      <blockquote><big><a href="Holy War.pdf"><span style="font-family:Segoe UI Emoji;" title="crossed swords">⚔️ </span><b>Holy War</b></a></big><br>
+      This is a text about some effects of human life, which spiritual people need to fight (and how, my ideas).</blockquote>
+      <blockquote><big><a href="Short Text about what I say about Positive and Negative.pdf"><span style="font-family:Segoe UI Emoji;" title="yin yang">☯️ </span><b>Short Text about what I say about Positive and Negative</b></a></big><br>
+      This I first wrote to Reddit Spirituality, but they removed this with automatic filters; it's a very short introduction into what I have to say about Positive and Negative Thinking. So I moved it up in this list, to introductions - the texts, indeed, are going to repeat some points here.</blockquote>
+      <blockquote><big><a href="Principles of Material Magic.pdf"><span style="font-family:Segoe UI Emoji;" title="sparkles">✨ </span><b>Principles of Material Magic</b>.</a></big></blockquote>
+      <blockquote><big><a href="Principles of Material Magic – short version.pdf"><span style="font-family:Segoe UI Emoji;" title="lotus">🌸 </span><b>Principles of Material Magic</a> — short version</b>.</big><br>
+      Every Buddhist principle you need for Material Awakening, in a few words. This should get you going on path, as you understand the underlying principles - it's helping you both if you don't get far, or if you are a beginner; but also an advanced practicioner or a person, who is materially enlightened, would use the same principles; like Buddhist path, it's the same from beginning to the enlightenment, so you can study this and surely enjoy some benefits and the benefit of not needing to change much as you advance.</blockquote>
+      <blockquote><big><a href="The Power of Negative Thinking.pdf"><span style="font-family:Segoe UI Emoji;" title="warning">⚠️ </span>The Power of Negative Thinking.</a></big></blockquote>
+      <blockquote><big><a href="The Law of Imperfection and Karma.pdf"><span style="font-family:Segoe UI Emoji;" title="balance scale">⚖️ </span>The Law of Imperfection and Karma.</a></big></blockquote>
+      <blockquote><big><a href="One Short Theory about Star Children.pdf"><span style="font-family:Segoe UI Emoji;" title="star">⭐ </span>One Short Theory about Star Children.</a></big></blockquote>
+      <blockquote><big><a href="The Material Laws of Truth.pdf"><span style="font-family:Segoe UI Emoji;" title="scroll">📜 </span>The Material Laws of Truth.</a></big></blockquote>
+      <blockquote><big><a href="Comparison of, mostly, Buddhism and Christianity.pdf"><span style="font-family:Segoe UI Emoji;" title="book">📖 </span>Comparison of, mostly, Buddhism and Christianity.</a></big></blockquote>
+      <blockquote><big><a href="Tuning into Material Reality.pdf"><span style="font-family:Segoe UI Emoji;" title="satellite antenna">📡 </span>Tuning into Material Reality.</a></big></blockquote>
+      <blockquote><big><a href="Yin and Yang in Meditation.pdf"><span style="font-family:Segoe UI Emoji;" title="yin yang">☯️ </span>Yin and Yang in Meditation.</a></big></blockquote>
+      <blockquote><big><a href="Healthy Conflict Psychology.pdf"><span style="font-family:Segoe UI Emoji;" title="speech balloon">💬 </span>Healthy Conflict Psychology.</a></big></blockquote>
+
+    <h2 class="booky-title" style="font-family:Verdana, sans-serif; font-size:1.6em; color:#34495e; border-bottom:2px solid #ccc; padding-bottom:5px; margin-top:30px;">
+      Continuing Studies
+    </h2>
+    
+    <blockquote style="border:3px solid #1b5e20; border-radius:12px; background:linear-gradient(135deg,#fdfdfd,#eef7ee); padding:14px; margin:20px 0; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+      <big>
+        <a href="https://www.popai.pro/ppt-share?shareKey=87543f5adbb61069fd42a0fc439738d802d1aaf72585bc0e0665d9d40fec1375&utm_source=presentationsharepage" 
+           style="text-decoration:none; font-family:'Georgia',serif; font-size:1.2em; font-weight:bold; color:#1b5e20;">
+           <span style="font-family:Segoe UI Emoji; font-size:1.4em;" title="open book">📚</span> 
+           <span style="color:#2c3e50;">Overview of the Two Parts</span>
+        </a>
+      </big>
+      <br>
+      <span style="font-family:'Palatino Linotype',serif; font-size:1em; color:#333;">
+        A concise map of the journey: <em>Foundational Texts</em> introduce the essential principles, while <em>Continuing Studies</em> expand into deeper explorations, debates, and applications. Each link below is a doorway into one facet of the whole. <small>Here you find the deeper and more intelligent introduction to the main themes of my science of modernized buddhism and karmic magic.</small>.
+      </span>
+    </blockquote>
+    
+      <blockquote><big><a href="Karma.pdf"><span style="font-family:Segoe UI Emoji;" title="seedling">🌱 </span>Spireason 1</a></big><br>An introduction.</blockquote>
+      <blockquote><big><a href="Evolution.pdf"><span style="font-family:Segoe UI Emoji;" title="memo">📝 </span>Spireason 2</a></big><br>Another article.</blockquote>
+      <blockquote><big><a href="Meditation and Position.pdf"><span style="font-family:Segoe UI Emoji;" title="person in lotus position">🧘 </span>Meditation and Position.</a></big></blockquote>
+      <blockquote><big><a href="Truth Value Tables, Matter and Mind.pdf"><span style="font-family:Segoe UI Emoji;" title="atom">⚛️ </span>This is about Logics and Alchemistry</a></big><br>
+      About one big thing in Logics, and about one big thing in Mind over Matter.</blockquote>
+      <blockquote><big><a href="The Simpler Theorem of Karma.pdf"><span style="font-family:Segoe UI Emoji;" title="recycle">♻️ </span>The Simpler Theorem of Karma.</a></big></blockquote>
+      <blockquote><big><a href="Reincarnation Basics.pdf"><span style="font-family:Segoe UI Emoji;" title="cycle arrows">🔄 </span>Reincarnation Basics.</a></big></blockquote>
+      <blockquote><big><a href="Material Alchemy and Root Chakra.pdf"><span style="font-family:Segoe UI Emoji;" title="red circle">🔴 </span>Material Alchemy and Root Chakra.</a></big><br>
+      Here I tried to help one person with problem of root chakra in a forum, but then they told me they would remove my texts. It's also a good introduction to material alchemy in general, explaining the two related theorems from Buddhism. I like to keep it in context so that people with related problems can do as I do, and try to be more material :)</blockquote>
+      <blockquote><big><a href="Karma and Material Meditation.pdf"><span style="font-family:Segoe UI Emoji;" title="thought balloon">💭 </span>Karma and Material Meditation.</a></big></blockquote>
+      <blockquote><big><a href="Magic as Mental Image.pdf"><span style="font-family:Segoe UI Emoji;" title="crystal ball">🔮 </span>Magic as Mental Image.</a></big><br>
+      At websites of Laegna, you can also find <small><a href="https://assorted-canopy-961.notion.site/Exploring-the-Dual-Nature-of-Karma-Magic-and-Rationality-A-Scientific-Approach-1a575bfc115480be8de0f6e39b2b3f5a?pvs=143"><span style="font-family:Segoe UI Emoji;" title="universe">🌌 </span>this text</a></small>, which is basically a longer rewrite with images.</blockquote>
+      <blockquote><big><a href="Frequential Analysis of System of Chakras in Buddhism.pdf"><span style="font-family:Segoe UI Emoji;" title="sound wave">📶 </span>Frequential Analysis of System of Chakras in Buddhism.</a></big><br>
+      If this is not enough, you can find out the scientific thought about resonant, ethical, holofractal systems being fundamental - logical-mathematical-tautological -, rather than physical or spiritual, which just become possible by <small><a href="https://assorted-canopy-961.notion.site/Metaphysics-of-a-Human-Life-and-Lifelike-Structures-1a575bfc115480c4a838fcef7b416072?pvs=74"><span style="font-family:Segoe UI Emoji;" title="electroalchemical sign">⚡ </span>this fact</a></small>.</blockquote>
+      <blockquote><big><a href="Logecs and E factor – what is bad in positive affirmations.pdf"><span style="font-family:Segoe UI Emoji;" title="question mark">❓ </span>Logecs and E factor</a></big><br>What is bad in positive affirmations? Continued <small><a href="https://assorted-canopy-961.notion.site/The-Journey-of-the-Mind-Transcendence-Balance-and-the-Path-to-Constructive-Transformation-1a575bfc1154809ab511e2281ca9c7a2?pvs=73"><span style="font-family:Segoe UI Emoji;" title="mental chain">🔗 </span>here</a></small>.</blockquote>
+      <blockquote><big><a href="Skepticism and Science for Spiritual People.pdf"><span style="font-family:Segoe UI Emoji;" title="microscope">🔬 </span>Skepticism and Science for Spiritual People.</a></big></blockquote>
+      
+    <blockquote style="border:3px solid #1b5e20; border-radius:12px; background:linear-gradient(135deg,#fdfdfd,#eef7ee); padding:14px; margin:20px 0; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+      <big>
+        <a href="https://docs.google.com/presentation/d/e/2PACX-1vSHZ-w9sdtsUNt4T73wTpPIRNSDALDZ_Xph5NLDIMhFSdOaKkCi2tMddQI8Yuh_gQ/pub?start=false&loop=false&delayms=3000" 
+           style="text-decoration:none; font-family:'Georgia',serif; font-size:1.2em; font-weight:bold; color:#1b5e20;">
+           <span style="font-family:Segoe UI Emoji; font-size:1.4em;" title="open book">🌐</span> 
+           <span style="color:#2c3e50;">Laegna and Spireason: be the Force</span>
+        </a>
+      </big>
+      <br>
+      <span style="font-family:'Palatino Linotype',serif; font-size:1em; color:#333;">
+        Transform this basis into real Science, Spirituality, Philosophy and Practice.
+      </span>
+    </blockquote>
+    
+    <p>
+    
+    <h2 style="font-family:Verdana, sans-serif; font-size:1.6em; color:#16a085; border-left:5px solid #16a085; padding-left:10px; margin-top:40px;">
+      What These Texts Cover
+    </h2>
+    <ul>
+    <li>Spiritual truths enchanced with my experience, and the reasoning behind them by simpler conceptions than I have seen.</li>
+    <li>Glimpse into infinity, mathematics and logic (logec) I have made to support spiritual aims.</li>
+    </ul>
+
+    <h2 style="font-family:Verdana, sans-serif; font-size:1.6em; color:#16a085; border-left:5px solid #16a085; padding-left:10px; margin-top:20px;">
+      What I Study
+    </h2>
+    <p>Today my most important area of research is that through our lives, we are rhythmically going through Material and Heavenly, Yin and Yang, or Negative and Positive. There are times, where Eternal Truth shines through, and we do not need to learn, we are perfect, and on the Flow. Then, it always breaks, and the Material or Negative comes in - Negative thoughts, which are born and die in Nature, they come in, and we gaze them with horrified eyes, but there is nothing to do - somehow, the need to go through the imperfect aspect of Life, the growth and not being there yet, and all the Karmic patterns, is inevitable; it seems to have a great paradox with our higher Truth, and requirements for Enlightenment / Awakening, or it's Nature - but, inevitably, we cannot be but we find certain Truth in this Negative, or otherwise it constantly reminds us, the Earthly Business comes and is very sure to break our Infinite Wisdom into little pieces.</p>
+    <p>The other, related Truth is that looking only from Heavenly perspective, we need to be overly Positive. Still, going to extreme, positivity about your current situation, the life you have lived, and all your friends - In effect, growth is painful as it kills your current ideas and ideals; you be dogmatic as otherwise, the painful Truth appears that you and your friends were not perfect. Then, as a success-society member, as people or groups prepare to grow, stating that they got a better idea, you do not get your "yes" - instead of growing, you see them as failing their whole lives, because new ideas are the opposite; the ideas always fluctuate between the opposite ends of belief to keep something deeper stable; we always do the extreme, and then the opposite end manifests as New Truth. The attacking, positive reaction to other's growth makes their situation even more painful and they need to keep this "perfect image" of themselves, their politics and products. Also, we need to laugh over our past ideas, but this is not possible, being overly positive about yourself - people, offices, companies and whole masses with certain beliefs feel an innmost pain when their well-learnt ideas are touched, and they behave as if they were attacked. When people behave so, they start to attack back. You cannot safely change in this society, because it keept the positive self image - when self image is attacked and fluctuates, goes through the material process of Truth, which is constantly changing, this is the process. When it's stopped and you must stick to your words and actions - it's stagnation and dogmatism. When Christians became overly positive about their ideas and world image, they contradicted Science, and men appeared, who were so fucking positively self-sacrificing, and authoritative towards others, whereas Christ and his original school was not that positive, but searching and asking questions. The science came, did hit those men and started to search and ask questions - soon, it ended, and it was overly positive about it's current state of affairs, not believing any more the things it could not prove; but for many people, looking at their lives - if those are not true, they are still much more probable; ideas like Greater Harmony in Cosmos.</p>
+    <p>When we look at the Surviving Force, the Evolutionary Advantage, it's constantly changing - we cannot find it by one positive idea, but by constant change from one extreme to another; one-God-followers and Atheists really moved on with the <i>same</i> revolution of coming over the stagnatic and frozen beliefs; and then the <i>same</i> type of positive people started to fight the New Archetype as Dogma, which everyone needs to follow. Those were both Scientific Revolutions, revolutionizing the Thought - and, as the Money and Power moved to this New Wave, the <i>Positive People</i> came, learnt to survive and approach this money, and finally turned it into stagnatic, dogmatic society by only following the old idea. Truth is always personal, and what they only found the Truth of the Current Era - indeed, when Positive People arrived at Church, the Word of Christ was used to gain Money and Power, the Positive Things; when they arrived at Science, they adopted the Theories as Truth - but this was only stated that this is the part which is Certain, not that the thoughts outside this are False; no model is completely correct or completely wrong, and our current Truth depends on our sense abilities, thinking abilities, and current experience and goals. Based on this, we create some unified system of different ideas, and if one person finds the Truth - this is helpful to others, they should fight for it, but it's not supposed to be the final Truth of everybody; another person can have a picture as coherent, but with opposing facts - a picture as useful in their lives. And, those are not opinions, but Truths - indeed, we need to be certain about our truth, yet skeptical, and others are inspired when we state that we tested this one a lot and it's a deep, firmly hold belief - but they must do no mistake and think that it's the Truth for them; Truth is never a general term to be fought so heavily, but there is my Truth and your Truth, and not solely my Opinion and your Opinion. For some people, with their inability to grasp the idea of God, it's perfectly True that their God does not exist. For others, the idea of God does not contain such complications and manipulations. Also, there is still Truth and Lies - we need to fight about Truth, but not one personal Truth; it's way filled with paradoxes and much more complex than this.</p>
+    <p>And we need to be sceptical. We need to analyze our Spiritual Ideas, find the important essence, which is not only abstract facts, and we need to find the same, Synchronous Truth trhough all those Worlds, to reappear for normal senses, for logic, for hypersensory perception. We find something deep and important, which can be refound by different people in different realms. We need to support those Opposing Models, seeing that they all lead to Ethics, to Survival, and to Search for Higher Ideals and Ideas. This way, all religions and science can live together. Even the old paganism and witchcraft - in the name of Spiritual Warrior, today they are evolved and follow the more decent Way. In past, we can see that their High Ideas looked more or less criminal for More Evolved Religions and Social Sciences.</p>
+    
+    <hr>
+    
+    <p>You can follow me on NeoCities. Btw. in this era of Starseeds, if you are interested in which star I come from, then it's <a href="https://thebalancedblonde.com/2022/11/09/all-starseed-types-lets-get-into-it/">Arcturus</a>. There's a <a href="https://thebalancedblonde.com/#quiz">test</a> about this - I tried and got the right type.</p>
+
+    <!-- Scroll Down Button (dynamic visibility) -->
+    <div id="scrollButton" onclick="document.getElementById('spireason-anchor').scrollIntoView({behavior:'smooth'})" style="
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+      z-index: 999;
+      font-weight: bold;
+      display: none;
+    ">
+      <div style="font-size: 20px; line-height: 1;">&#x25BC;<br>&#x25BC;</div>
+      Scroll Down
+    </div>
+    
+    <div style="text-align: center; font-size: 0.85em; color: #888; margin-top: 40px; margin-bottom: 20px;">
+      🅞 <b style="color: red;">Laegna</b> & <b style="color: blue;"><i>Spireason</i></b> — <a href="https://spireason.neocities.org/collaborate.html">Open creations</a> of 2015–2025, first published at 2024, with <a href="https://cloud.uibakery.io/share/Etck7En4t5/home">iterative freedom</a>.
+    </div>
+    
+    <div style="text-align: center; font-size: 0.9em; color: #888; margin-top: 20px;">
+      <span style="font-size: 1.2em;">⏳</span>
+      <a href="https://huggingface.co/datasets/tvaeli/LaegnaSpi/resolve/main/neocities-spireason%2020%20oct.%20of%202025%20(whole%20website).zip"
+         style="color: #000; font-weight: bold; text-decoration: none;">
+        <b>Download</b>
+      </a> the whole website:
+      <a href="https://huggingface.co/datasets/tvaeli/LaegnaSpi/resolve/main/Spireason.zip"
+         style="color: #666; font-size: 1.1em; text-decoration: none;">
+        📚 Mar 19 2025 (Texts)
+      </a>,
+      <a href="https://huggingface.co/datasets/tvaeli/LaegnaSpi/resolve/main/neocities-spireason%2020%20oct.%20of%202025%20(whole%20website).zip"
+         style="
+           font-size: 1.1em;
+           font-weight: bold;
+           color: #004466;
+           text-decoration: none;
+           padding: 4px 10px;
+           border-radius: 6px;
+           background: linear-gradient(135deg, #e0f7ff, #cce0ff);
+           box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+           display: inline-block;
+           transition: transform 0.2s ease;
+         "
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'">
+        💠 Oct 20 2025 (Dynamo)
+      </a>.
+      <br>
+      <span style="font-size: 1.2em;">🧬</span>
+      <a href="https://huggingface.co/datasets/tvaeli/LaegnaSpi/tree/main"
+         style="color: #444; font-weight: bold; text-decoration: none;">
+        Access Spireason + Laegna
+      </a> — full Notion + site archive.
+      <br><br><br><br>
+    </div>
+
+    <script>
+      function toggleScrollButton() {
+        const btn = document.getElementById('scrollButton');
+        btn.style.display = (window.scrollY < 20) ? 'block' : 'none';
+      }
+    
+      window.addEventListener('scroll', toggleScrollButton);
+      window.addEventListener('load', toggleScrollButton);
+    </script>
+    
+    <!-- Hosted by Neocities Stats Link -->
+    <div style="
+      position: fixed;
+      bottom: 8px;
+      left: 120px;
+      font-size: 0.75em;
+      color: #666;
+      background: rgba(255,255,255,0.8);
+      padding: 4px 8px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      z-index: 50;
+    ">
+      <a href="https://neocities.org/site/spireason/stats" target="_blank" style="color: #007BFF; text-decoration: none;">
+        Hosted by Neocities
+      </a>
+    </div>
+  </div>
+
+  </body>
+</html>
